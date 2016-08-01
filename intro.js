@@ -708,7 +708,9 @@
       // Otherwise, remove a fixed class that may be left over from the previous
       // step.
       if (_isFixed(currentElement.element)) {
-        helperLayer.className += ' introjs-fixedTooltip';
+        if (helperLayer.className.indexOf(' introjs-fixedTooltip') === -1) {
+          helperLayer.className += ' introjs-fixedTooltip';
+        }
       } else {
         helperLayer.className = helperLayer.className.replace(' introjs-fixedTooltip', '');
       }
